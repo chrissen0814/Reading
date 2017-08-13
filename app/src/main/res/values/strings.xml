@@ -67,5 +67,16 @@
     </string-array>
 
     <string name="default_screen_default">picture</string>
+
+    <string-array name="picture_category">
+        <item>Unsplash</item>
+        <item>Gank妹子</item>
+    </string-array>
+
+    <string-array name="picture_category_value">
+        <item>unsplash</item>
+        <item>meizhi</item>
+    </string-array>
+    <string name="default_picture_category">unsplash</string>
     
 </resources>

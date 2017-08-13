@@ -8,8 +8,8 @@ import java.util.List;
  * Created by Administrator on 2017/8/2.
  */
 
-public interface OnLoadMoreListener {
+public interface OnUnsplashLoadNowListener {
 
-    void onLoadMore(List<Unsplash> unsplashList);
+    void onLoadNow(List<Unsplash> unsplashList);
 
 }

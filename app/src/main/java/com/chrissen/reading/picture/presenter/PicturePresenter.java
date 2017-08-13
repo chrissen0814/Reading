@@ -6,8 +6,10 @@ package com.chrissen.reading.picture.presenter;
 
 public interface PicturePresenter {
 
-    void loadImage(int page);
+    void loadUnsplashImage(int page);
 
-    void loadMore(int page);
+    void loadUnsplashMore(int page);
+
+    void loadGankImage(int page);
 
 }

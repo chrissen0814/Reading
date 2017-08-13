@@ -26,5 +26,7 @@ public class Api {
     public static final String ONE_UUID = "ffffffff-a90e-706a-63f7-ccf973aae5ee";
     public static final String ONE_PLATFORM = "android";
 
+    public static final String GANK_URL = "http://gank.io/api/data/";
+
 
 }
