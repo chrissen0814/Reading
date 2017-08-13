@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:layout_marginLeft="@dimen/card_view_layout_margin"
+    android:layout_marginRight="@dimen/card_view_layout_margin"
+    android:layout_marginTop="@dimen/card_view_layout_margin"
+    app:cardElevation="@dimen/card_view_elevation"
+    app:cardCornerRadius="@dimen/card_view_coner_radius">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_onelist_title"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:paddingBottom="12dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="24dp"
+                android:textSize="20sp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                tools:text="战斗民族俄罗斯民风彪悍，不过是酒后幻觉"/>
+
+            <TextView
+                android:id="@+id/item_onelist_desc_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_gravity="center_vertical|bottom"
+                android:gravity="center_vertical|bottom"
+                android:padding="12dp"
+                android:textSize="14sp"
+                tools:text="战斗民族俄罗斯民风彪悍，不过是酒后幻觉"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/item_onelist_image_iv"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            tools:src="@drawable/icon_thumbail"/>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

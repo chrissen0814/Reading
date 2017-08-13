@@ -6,5 +6,6 @@ package com.chrissen.reading.one.presenter;
 
 public interface OneListPresenter {
     void getOneList();
+    void getReadingList();
 
 }

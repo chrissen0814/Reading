@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import android.widget.LinearLayout;
 
 import com.chrissen.reading.news.view.NewsFragment;
-import com.chrissen.reading.one.view.OneListFragment;
+import com.chrissen.reading.one.view.OneListListFragment;
 import com.chrissen.reading.picture.view.PictureFragment;
 import com.chrissen.reading.rss.view.RssFragment;
 import com.chrissen.reading.util.fragmentHelper.BackHandlerHelper;
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startOneFragment(){
-        OneListFragment of = new OneListFragment();
+        OneListListFragment of = new OneListListFragment();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.main_container_fl,of)
                 .commit();

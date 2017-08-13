@@ -5,6 +5,7 @@ import com.chrissen.reading.one.bean.Answer;
 import com.chrissen.reading.one.bean.Essay;
 import com.chrissen.reading.one.bean.IdList;
 import com.chrissen.reading.one.bean.OneList;
+import com.chrissen.reading.one.bean.ReadingList;
 import com.chrissen.reading.picture.bean.Unsplash;
 import com.chrissen.reading.rss.bean.Rsses;
 import com.chrissen.reading.rss.bean.Stream;
@@ -51,5 +52,8 @@ public interface ApiInterface {
 
     @GET("question/{itemId}")
     Observable<Answer> getOneQuestion(@Path("itemId")String itemId,@Query("channel") String channel,@Query("version")String version , @Query("uuid")String uuid ,@Query("platform")String platform);
+
+    @GET("channel/reading/more/0")
+    Observable<ReadingList> getReadingList(@Query("channel") String channel,@Query("version")String version , @Query("uuid")String uuid ,@Query("platform")String platform);
 
 }

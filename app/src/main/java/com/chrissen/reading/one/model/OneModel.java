@@ -10,4 +10,6 @@ public interface OneModel {
 
     void loadOneList(OnOneListListener listener);
 
+    void loadOneReadingList(OnOneListListener listener);
+
 }

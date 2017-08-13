@@ -1,9 +1,10 @@
 package com.chrissen.reading.one.presenter;
 
 import com.chrissen.reading.one.bean.OneList;
+import com.chrissen.reading.one.bean.ReadingList;
 import com.chrissen.reading.one.model.OneModel;
 import com.chrissen.reading.one.model.OneModelImpl;
-import com.chrissen.reading.one.view.OneView;
+import com.chrissen.reading.one.view.OneListView;
 
 /**
  * Created by Administrator on 2017/8/12.
@@ -11,10 +12,10 @@ import com.chrissen.reading.one.view.OneView;
 
 public class OneListPreImpl implements OneListPresenter , OnOneListListener {
     private OneModel mOneModel;
-    private OneView mOneView;
+    private OneListView mOneListView;
 
-    public OneListPreImpl(OneView oneView){
-        mOneView = oneView;
+    public OneListPreImpl(OneListView oneListView){
+        mOneListView = oneListView;
         mOneModel = new OneModelImpl();
     }
 
@@ -24,8 +25,18 @@ public class OneListPreImpl implements OneListPresenter , OnOneListListener {
     }
 
     @Override
+    public void getReadingList() {
+        mOneModel.loadOneReadingList(this);
+    }
+
+    @Override
     public void loadOneListSuccess(OneList oneList) {
-        mOneView.showOneList(oneList);
+        mOneListView.showOneList(oneList);
+    }
+
+    @Override
+    public void loadOneReadingList(ReadingList readingList) {
+        mOneListView.showReadingList(readingList);
     }
 
 }

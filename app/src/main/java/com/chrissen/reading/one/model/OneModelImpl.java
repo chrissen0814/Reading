@@ -2,12 +2,16 @@ package com.chrissen.reading.one.model;
 
 import com.chrissen.reading.one.bean.IdList;
 import com.chrissen.reading.one.bean.OneList;
+import com.chrissen.reading.one.bean.ReadingList;
 import com.chrissen.reading.one.presenter.OnOneListListener;
 import com.chrissen.reading.util.PreferenceHelper;
 import com.chrissen.reading.util.http.Api;
 import com.chrissen.reading.util.http.RetrofitFactory;
 
+import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
@@ -40,6 +44,35 @@ public class OneModelImpl implements OneModel {
                     @Override
                     public void accept(OneList oneList) throws Exception {
                         listener.loadOneListSuccess(oneList);
+                    }
+                });
+    }
+
+    @Override
+    public void loadOneReadingList(final OnOneListListener listener) {
+        new RetrofitFactory(Api.ONE_URL).getApiInterface()
+                .getReadingList(Api.ONE_CHANNEL,Api.ONE_VERSION,Api.ONE_UUID,Api.ONE_PLATFORM)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ReadingList>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(@NonNull ReadingList readingList) {
+                        listener.loadOneReadingList(readingList);
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
                     }
                 });
     }

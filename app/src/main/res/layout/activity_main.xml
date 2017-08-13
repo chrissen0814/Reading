@@ -34,7 +34,7 @@
 
     <LinearLayout
         android:id="@+id/main_drawer_layout_ll"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_gravity="start"

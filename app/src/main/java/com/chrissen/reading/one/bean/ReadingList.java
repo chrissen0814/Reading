@@ -24,10 +24,39 @@ public class ReadingList {
     public class Reading{
         @SerializedName("item_id")
         private String itemId;
+        private String category;
+        @SerializedName("display_category")
+        private String displayCategory;
         private String title;
         private String forward;
         @SerializedName("img_url")
         private String imageUrl;
+        @SerializedName("post_date")
+        private String postDate;
+
+        public String getPostDate() {
+            return postDate;
+        }
+
+        public void setPostDate(String postDate) {
+            this.postDate = postDate;
+        }
+
+        public String getDisplayCategory() {
+            return displayCategory;
+        }
+
+        public void setDisplayCategory(String displayCategory) {
+            this.displayCategory = displayCategory;
+        }
+
+        public String getCategory() {
+            return category;
+        }
+
+        public void setCategory(String category) {
+            this.category = category;
+        }
 
         public String getItemId() {
             return itemId;

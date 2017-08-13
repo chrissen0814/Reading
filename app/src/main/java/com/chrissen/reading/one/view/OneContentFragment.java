@@ -2,6 +2,7 @@ package com.chrissen.reading.one.view;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
@@ -29,11 +30,11 @@ import com.zzhoujay.richtext.RichText;
 public class OneContentFragment extends Fragment implements OneContentView {
     private static final String IMAGE_URL = "image";
     private static final String ITEM_ID = "item_id";
-    private static final String TYPE = "type";
+    private static final String TRANSITION = "transition";
 
     private String imageUrl;
     private String itemId;
-    private String type;
+    private String transitionName;
 
     private OneContentPresenter presenter;
 
@@ -43,11 +44,11 @@ public class OneContentFragment extends Fragment implements OneContentView {
     private Button linkBt;
     private AppBarLayout appBarLayout;
 
-    public static OneContentFragment newInstance(String imageUrl , String itemId , String type){
+    public static OneContentFragment newInstance(String imageUrl , String itemId , String transitionName){
         Bundle bundle = new Bundle();
         bundle.putString(IMAGE_URL,imageUrl);
         bundle.putString(ITEM_ID,itemId);
-        bundle.putString(TYPE,type);
+        bundle.putString(TRANSITION,transitionName);
         OneContentFragment fragment = new OneContentFragment();
         fragment.setArguments(bundle);
         return fragment;
@@ -59,7 +60,7 @@ public class OneContentFragment extends Fragment implements OneContentView {
         presenter = new OneContentPreImpl(this);
         imageUrl = getArguments().getString(IMAGE_URL);
         itemId = getArguments().getString(ITEM_ID);
-        type = getArguments().getString(TYPE);
+        transitionName = getArguments().getString(TRANSITION);
     }
 
     @Nullable
@@ -67,6 +68,9 @@ public class OneContentFragment extends Fragment implements OneContentView {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_one_content,container,false);
         headerIv = (ImageView) view.findViewById(R.id.one_content_image_iv);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            headerIv.setTransitionName(transitionName);
+        }
         titleTv = (TextView) view.findViewById(R.id.one_content_title_tv);
         contentTv = (TextView) view.findViewById(R.id.one_content_content_tv);
         linkBt = (Button) view.findViewById(R.id.one_content_link_bt);
@@ -78,14 +82,7 @@ public class OneContentFragment extends Fragment implements OneContentView {
     private void initLayout() {
         appBarLayout.getLayoutParams().height = ScreenUtil.getScreenWidth(getActivity())*9/16;
         Glide.with(this).load(imageUrl).centerCrop().into(headerIv);
-        switch (type){
-            case "content":
-                presenter.getContent(itemId);
-                break;
-            case "question":
-                presenter.getQuestion(itemId);
-                break;
-        }
+        presenter.getContent(itemId);
     }
 
     @Override
@@ -120,5 +117,11 @@ public class OneContentFragment extends Fragment implements OneContentView {
                 }
             });
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        getActivity().findViewById(R.id.main_bnv).setVisibility(View.VISIBLE);
     }
 }
