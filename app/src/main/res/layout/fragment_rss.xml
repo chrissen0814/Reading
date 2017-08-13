@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rss_tool_rl"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:textColor="@android:color/white"
+            android:text="@string/fragment_rss_title"/>
+
+        <ImageButton
+            android:id="@+id/rss_search_ib"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:background="@android:color/transparent"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icon_search"/>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rss_rv"
+        android:layout_below="@id/rss_tool_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
+
+
+</RelativeLayout>

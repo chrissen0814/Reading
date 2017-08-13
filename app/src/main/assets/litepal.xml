@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+
+    <dbname value="rsses.db"></dbname>
+    <version value="3"></version>
+    <list>
+        <mapping class="com.chrissen.reading.rss.bean.Feed" />
+        <mapping class="com.chrissen.reading.rss.bean.Entry"/>
+    </list>
+
+</litepal>

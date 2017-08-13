@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_bnv_picture"
+        android:title="@string/bnv_picture"
+        android:icon="@drawable/bnv_picture"
+        android:enabled="true"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_bnv_article"
+        android:title="@string/bnv_news"
+        android:icon="@drawable/bnv_article"
+        android:enabled="true"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_bnv_weibo"
+        android:title="@string/bnv_weibo"
+        android:icon="@drawable/bnv_weibo"
+        android:enabled="true"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_bnv_rss"
+        android:title="@string/bnv_rss"
+        android:icon="@drawable/bnv_rss"
+        android:enabled="true"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_bnv_one"
+        android:title="@string/bnv_one"
+        android:icon="@drawable/bnv_one"
+        android:enabled="true"
+        app:showAsAction="ifRoom"/>
+
+
+</menu>

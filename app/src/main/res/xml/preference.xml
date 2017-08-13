@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="首屏设置">
+
+        <ListPreference
+            android:key="default_screen"
+            android:title="设置默认首屏"
+            android:summary="点击弹出选择列表"
+            android:dialogTitle="请选择默认首屏"
+            android:entries="@array/default_screen"
+            android:entryValues="@array/default_screen_values"
+            android:defaultValue="@string/default_screen_default"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="新闻默认源">
+
+        <ListPreference
+            android:key="default_news"
+            android:title="设置默认新闻源"
+            android:summary="点击弹出选择列表"
+            android:dialogTitle="请选择默认新闻源"
+            android:entries="@array/news_category"
+            android:entryValues="@array/news_category_values"
+            android:defaultValue="@string/default_news_category"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="阅读设置">
+        <SwitchPreference
+            android:key="double_to_close"
+            android:title="双击关闭文章"
+            android:summary="在阅读界面双击关闭当前页"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

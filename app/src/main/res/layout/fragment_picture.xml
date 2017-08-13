@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/picture_tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:title="@string/fragment_unsplash_toolbar"
+        app:titleTextColor="@android:color/white">
+    </android.support.v7.widget.Toolbar>
+
+    <com.chrissen.reading.util.CustomRecyclerView
+        android:id="@+id/picture_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/recycler_view_padding"
+        android:clipToPadding="false"
+        android:layout_below="@id/picture_tool_bar"/>
+
+    <ProgressBar
+        android:id="@+id/picture_empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+
+
+</RelativeLayout>

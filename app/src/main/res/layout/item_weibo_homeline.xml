@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/card_view_layout_margin"
+    android:layout_marginLeft="@dimen/card_view_layout_margin"
+    android:layout_marginRight="@dimen/card_view_layout_margin"
+    app:cardElevation="@dimen/card_view_elevation"
+    app:cardCornerRadius="@dimen/card_view_coner_radius">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <ImageView
+                android:id="@+id/item_weibo_homeline_account_iv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                tools:src="@drawable/icon_thumbail"
+                android:scaleType="fitXY"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:id="@+id/item_weibo_homeline_account_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="8dp"
+                android:textSize="21sp"
+                tools:text="孙艺珍"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/item_weibo_homeline_text_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:lineSpacingExtra="3dp"
+            android:gravity="center_vertical"
+            android:textSize="19sp"
+            tools:text="私信、热门微博、热门话题、微博头条都采用内置官方触屏版实现,多图上传、点赞功能没有权限,用户搜索限制：v用户、粉丝500以上的达人、粉丝600以上的普通用户"/>
+
+        <ImageView
+            android:id="@+id/item_weibo_homeline_line_iv"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:visibility="invisible"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:id="@+id/item_weibo_homeline_retweeted_text_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:lineSpacingExtra="3dp"
+            android:gravity="center_vertical"
+            tools:text="提到运动大家首先想到的就是跑步，不少人都把它看做最简单的运动形式"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+            <ImageView
+                android:id="@+id/item_weibo_homeline_pic_01_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                tools:src="@drawable/icon_thumbail"/>
+
+            <ImageView
+                android:id="@+id/item_weibo_homeline_pic_02_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/weibo_thumbail_pic_margin"
+                android:scaleType="fitXY"
+                tools:src="@drawable/icon_thumbail"/>
+
+            <ImageView
+                android:id="@+id/item_weibo_homeline_pic_03_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/weibo_thumbail_pic_margin"
+                android:scaleType="fitXY"
+                tools:src="@drawable/icon_thumbail"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/weibo_thumbail_pic_margin"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+            <ImageView
+                android:id="@+id/item_weibo_homeline_pic_04_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                tools:src="@drawable/icon_thumbail"/>
+
+            <ImageView
+                android:id="@+id/item_weibo_homeline_pic_05_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/weibo_thumbail_pic_margin"
+                android:scaleType="fitXY"
+                tools:src="@drawable/icon_thumbail"/>
+
+            <ImageView
+                android:id="@+id/item_weibo_homeline_pic_06_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/weibo_thumbail_pic_margin"
+                android:scaleType="fitXY"
+                tools:src="@drawable/icon_thumbail"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/weibo_thumbail_pic_margin"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+            <ImageView
+                android:id="@+id/item_weibo_homeline_pic_07_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                tools:src="@drawable/icon_thumbail"/>
+
+            <ImageView
+                android:id="@+id/item_weibo_homeline_pic_08_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/weibo_thumbail_pic_margin"
+                android:scaleType="fitXY"
+                tools:src="@drawable/icon_thumbail"/>
+
+            <ImageView
+                android:id="@+id/item_weibo_homeline_pic_09_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/weibo_thumbail_pic_margin"
+                android:scaleType="fitXY"
+                tools:src="@drawable/icon_thumbail"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:visibility="gone">
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

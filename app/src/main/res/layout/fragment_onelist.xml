@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/onelist_picture_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/pic_news"/>
+
+                <TextView
+                    android:id="@+id/onelist_picture_foreward_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="12dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    tools:text="有人说：时间是最妙的疗伤药 此话没说对 "/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/onelist_yuwen_cv"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_marginLeft="@dimen/card_view_layout_margin"
+            android:layout_marginRight="@dimen/card_view_layout_margin"
+            android:layout_marginTop="@dimen/card_view_layout_margin"
+            app:cardElevation="@dimen/card_view_elevation"
+            app:cardCornerRadius="@dimen/card_view_coner_radius">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/onelist_yuwen_iv"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_alignParentRight="true"/>
+
+                <TextView
+                    android:id="@+id/onelist_yuwen_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/onelist_yuwen_iv"
+                    android:layout_marginBottom="12dp"
+                    android:paddingBottom="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="16dp"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:textSize="18sp"
+                    tools:text="一周语文丨怀着极恐的心情细思下去"/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/onelist_essay_cv"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_marginLeft="@dimen/card_view_layout_margin"
+            android:layout_marginRight="@dimen/card_view_layout_margin"
+            android:layout_marginTop="@dimen/card_view_layout_margin"
+            app:cardCornerRadius="@dimen/card_view_coner_radius"
+            app:cardElevation="@dimen/card_view_elevation">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/onelist_essay_iv"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_alignParentRight="true"/>
+
+                <TextView
+                    android:id="@+id/onelist_essay_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/onelist_essay_iv"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="16dp"
+                    android:textSize="18sp"
+                    tools:text="一周语文丨怀着极恐的心情细思下去"/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/onelist_question_cv"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_marginLeft="@dimen/card_view_layout_margin"
+            android:layout_marginRight="@dimen/card_view_layout_margin"
+            app:cardElevation="@dimen/card_view_elevation"
+            app:cardCornerRadius="@dimen/card_view_coner_radius"
+            android:layout_marginTop="@dimen/card_view_layout_margin"
+            android:layout_marginBottom="24dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/onelist_question_iv"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_alignParentRight="true"/>
+
+                <TextView
+                    android:id="@+id/onelist_question_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/onelist_question_iv"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp"
+                    android:paddingBottom="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="16dp"
+                    android:textSize="18sp"
+                    tools:text="想回到乡下继续当乡下女孩怎么办？"/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

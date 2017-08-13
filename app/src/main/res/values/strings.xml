@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Reading</string>
+    <string name="bnv_picture">图片</string>
+    <string name="bnv_news">新闻</string>
+    <string name="bnv_weibo">微博</string>
+    <string name="bnv_rss">Rss</string>
+    <string name="bnv_one">一个</string>
+
+    <string name="fragment_unsplash_toolbar">Unsplash</string>
+    <string name="fragment_news_toolbar">新闻</string>
+    <string name="fragment_rss_title">订阅</string>
+
+
+    <string name="subscribe_knowledge">涨知识</string>
+    <string name="subscribe_news">看新闻</string>
+    <string name="subscribe_entertainment">有意思</string>
+
+    <string name="rss_category_knowledge">Knowledge</string>
+    <string name="rss_category_news">News</string>
+    <string name="rss_category_entertainment">Entertainment</string>
+
+    <string name="weibo_auth_success">授权成功</string>
+    <string name="weibo_auth_cancel">已取消授权</string>
+    <string name="weibo_auth_fail">授权失败</string>
+
+    <string-array name="news_category">
+        <item>头条</item>
+        <item>新闻</item>
+        <item>财经</item>
+        <item>体育</item>
+        <item>娱乐</item>
+        <item>军事</item>
+        <item>科技</item>
+        <item>NBA</item>
+    </string-array>
+
+    <string-array name="news_category_values">
+        <item>top</item>
+        <item>news</item>
+        <item>finance</item>
+        <item>sport</item>
+        <item>entertainment</item>
+        <item>military</item>
+        <item>technology</item>
+        <item>nba</item>
+    </string-array>
+
+    <string name="default_news_category">top</string>
+    
+    <string name="url_scheme">urlscheme</string>
+    <string name="url_host">chrissen_main_activity</string>
+
+    <string-array name="default_screen">
+        <item>图片</item>
+        <item>新闻</item>
+        <item>微博</item>
+        <item>订阅</item>
+        <item>一个</item>
+    </string-array>
+
+    <string-array name="default_screen_values">
+        <item>picture</item>
+        <item>news</item>
+        <item>weibo</item>
+        <item>rss</item>
+        <item>one</item>
+    </string-array>
+
+    <string name="default_screen_default">picture</string>
+    
+</resources>

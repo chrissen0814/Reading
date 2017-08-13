@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/picture_detail_layout_ll"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/picture_detail_image_cv"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginTop="32dp"
+        app:cardElevation="16dp"
+        app:cardCornerRadius="4dp">
+
+        <ImageView
+            android:id="@+id/picture_detail_full_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/pic_news"/>
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/picture_detail_resource_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:textColor="@android:color/black"
+            tools:text="By Chris Sen"/>
+
+        <ImageView
+            android:id="@+id/picture_detail_line_iv"
+            android:layout_width="100dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="36dp"
+            android:background="@android:color/black"
+            android:layout_gravity="center_horizontal"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="32dp">
+
+            <LinearLayout
+                android:id="@+id/picture_detail_set_wallpaper_ll"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <ImageButton
+                    android:id="@+id/picture_detail_set_wallpaper_ib"
+                    android:layout_width="30dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:clickable="false"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/icon_setwallpaper"
+                    android:tint="@android:color/black"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/black"
+                    android:text="设为壁纸"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/picture_detail_save_ll"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <ImageButton
+                    android:id="@+id/picture_detail_save_ib"
+                    android:layout_width="30dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:clickable="false"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/icon_download"
+                    android:tint="@android:color/black"/>
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/black"
+                    android:text="保存"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/picture_detail_author_ll"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <ImageButton
+                    android:id="@+id/picture_detail_author_ib"
+                    android:layout_width="30dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:clickable="false"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/icon_author"
+                    android:tint="@android:color/black"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/black"
+                    android:text="拍摄者"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/picture_detail_share_ll"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <ImageButton
+                    android:id="@+id/picture_detail_share_ib"
+                    android:layout_width="30dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:clickable="false"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/icon_share"
+                    android:tint="@android:color/black"/>
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/black"
+                    android:text="分享"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/picture_detail_link_ll"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <ImageButton
+                    android:id="@+id/picture_detail_link_ib"
+                    android:layout_width="30dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:clickable="false"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/icon_link"
+                    android:tint="@android:color/black"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/black"
+                    android:text="图片网址"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/picture_detail_pb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="invisible"
+            android:indeterminate="true"
+            style="?android:attr/progressBarStyleHorizontal"/>
+
+    </LinearLayout>
+
+</LinearLayout>
