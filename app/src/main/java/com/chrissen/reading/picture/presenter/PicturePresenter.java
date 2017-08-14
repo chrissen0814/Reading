@@ -10,6 +10,4 @@ public interface PicturePresenter {
 
     void loadUnsplashMore(int page);
 
-    void loadGankImage(int page);
-
 }

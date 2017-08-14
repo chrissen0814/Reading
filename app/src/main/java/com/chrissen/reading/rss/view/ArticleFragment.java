@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.chrissen.reading.R;
 import com.chrissen.reading.rss.bean.Entry;
+import com.umeng.analytics.MobclickAgent;
 import com.zzhoujay.richtext.RichText;
 
 import org.litepal.crud.DataSupport;
@@ -76,5 +77,15 @@ public class ArticleFragment extends Fragment {
         });
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onPageStart("ArticleFragment");
+    }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPageEnd("ArticleFragment");
+    }
 }

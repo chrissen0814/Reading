@@ -20,6 +20,7 @@ import com.chrissen.reading.weibo.bean.Status;
 import com.chrissen.reading.weibo.presenter.WeiboPresenter;
 import com.chrissen.reading.weibo.presenter.WeiboPresenterImpl;
 import com.sina.weibo.sdk.auth.sso.SsoHandler;
+import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -104,8 +105,14 @@ public class WeiBoFragment extends Fragment implements WeiboView {
     @Override
     public void onResume() {
         super.onResume();
+        MobclickAgent.onPageStart("WeiBoFragment");
         presenter.loadHomeLine();
+    }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPageEnd("WeiBoFragment");
     }
 
     @Override

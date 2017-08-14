@@ -21,6 +21,7 @@ import com.chrissen.reading.one.bean.Essay;
 import com.chrissen.reading.one.presenter.OneContentPreImpl;
 import com.chrissen.reading.one.presenter.OneContentPresenter;
 import com.chrissen.reading.util.ScreenUtil;
+import com.umeng.analytics.MobclickAgent;
 import com.zzhoujay.richtext.RichText;
 
 /**
@@ -117,6 +118,18 @@ public class OneContentFragment extends Fragment implements OneContentView {
                 }
             });
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onPageStart("OneContentFragment");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPageEnd("OneContentFragment");
     }
 
     @Override

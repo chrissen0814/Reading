@@ -38,4 +38,5 @@ dependencies {
     compile 'com.zzhoujay.richtext:richtext:2.5.4'
     compile 'jp.wasabeef:glide-transformations:2.0.2'
     compile 'com.sina.weibo.sdk:core:4.1.0:openDefaultRelease@aar'
+    compile 'com.umeng.analytics:analytics:latest.integration'
 }

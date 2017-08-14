@@ -1,6 +1,5 @@
 package com.chrissen.reading.picture.presenter;
 
-import com.chrissen.reading.picture.bean.Gank;
 import com.chrissen.reading.picture.model.PictureModel;
 import com.chrissen.reading.picture.bean.Unsplash;
 import com.chrissen.reading.picture.model.PictureModelImpl;
@@ -12,7 +11,7 @@ import java.util.List;
  * Created by Administrator on 2017/8/2.
  */
 
-public class PictureImpl implements PicturePresenter , OnUnsplashLoadNowListener, OnUnsplashLoadMoreListener , OnGankLoadListener {
+public class PictureImpl implements PicturePresenter , OnUnsplashLoadNowListener, OnUnsplashLoadMoreListener{
 
     private PictureModel mModel;
     private PictureView mView;
@@ -32,11 +31,6 @@ public class PictureImpl implements PicturePresenter , OnUnsplashLoadNowListener
         mModel.loadUnsplashMore(page,this);
     }
 
-    @Override
-    public void loadGankImage(int page) {
-        mModel.loadGank(page,this);
-    }
-
 
     @Override
     public void onLoadMore(List<Unsplash> unsplashList) {
@@ -48,8 +42,4 @@ public class PictureImpl implements PicturePresenter , OnUnsplashLoadNowListener
         mView.showImage(unsplashList);
     }
 
-    @Override
-    public void onLoadGankSuccess(List<Gank.MeiZhi> meiZhiList) {
-        mView.showGankImage(meiZhiList);
-    }
 }

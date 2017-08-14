@@ -33,6 +33,7 @@ import com.chrissen.reading.picture.bean.Unsplash;
 import com.chrissen.reading.util.ImageHelper;
 import com.chrissen.reading.util.fragmentHelper.BackHandlerHelper;
 import com.chrissen.reading.util.fragmentHelper.FragmentBackHandler;
+import com.umeng.analytics.MobclickAgent;
 
 import java.io.IOException;
 
@@ -116,8 +117,15 @@ public class PictureDetailFragment extends Fragment implements View.OnClickListe
     @Override
     public void onResume() {
         super.onResume();
+        MobclickAgent.onPageStart("PictureDetailFragment");
         Glide.with(this).load(unsplash.getUrls().getRegular()).centerCrop().into(fullIv);
         resourceTv.setText("By" + " " + unsplash.getUser().getName() + " " + "On Unsplash");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPageEnd("PictureDetailFragment");
     }
 
     @Override

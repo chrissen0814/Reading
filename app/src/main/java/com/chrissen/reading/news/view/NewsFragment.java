@@ -21,6 +21,7 @@ import com.chrissen.reading.news.bean.News;
 import com.chrissen.reading.news.presenter.NewsImpl;
 import com.chrissen.reading.news.presenter.NewsPresenter;
 import com.chrissen.reading.util.CustomRecyclerView;
+import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -164,4 +165,15 @@ public class NewsFragment extends Fragment implements NewsView {
         mNewsAdapter.notifyDataSetChanged();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onPageStart("NewsFragment");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPageEnd("NewsFragment");
+    }
 }

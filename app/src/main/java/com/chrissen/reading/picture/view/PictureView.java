@@ -1,6 +1,5 @@
 package com.chrissen.reading.picture.view;
 
-import com.chrissen.reading.picture.bean.Gank;
 import com.chrissen.reading.picture.bean.Unsplash;
 
 import java.util.List;
@@ -14,7 +13,5 @@ public interface PictureView {
     void showImage(List<Unsplash> unsplashList);
 
     void loadMoreImage(List<Unsplash> unsplashList);
-
-    void showGankImage(List<Gank.MeiZhi> meiZhiList);
 
 }

@@ -1,10 +1,6 @@
 package com.chrissen.reading.picture.model;
 
-import android.util.Log;
-
-import com.chrissen.reading.picture.bean.Gank;
 import com.chrissen.reading.picture.bean.Unsplash;
-import com.chrissen.reading.picture.presenter.OnGankLoadListener;
 import com.chrissen.reading.picture.presenter.OnUnsplashLoadMoreListener;
 import com.chrissen.reading.picture.presenter.OnUnsplashLoadNowListener;
 import com.chrissen.reading.util.http.Api;
@@ -81,36 +77,5 @@ public class PictureModelImpl implements PictureModel {
                 });
     }
 
-    @Override
-    public void loadGank(int page , final OnGankLoadListener listener) {
-        new RetrofitFactory(Api.GANK_URL).getApiInterface()
-                .getGankMeiZhi(10,page)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<Gank>() {
-                    @Override
-                    public void onSubscribe(@NonNull Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(@NonNull Gank gank) {
-                        if(gank.getError().equals("false")){
-                            Log.i(TAG, "Gank: " + gank.getMeizhiList().size());
-                            listener.onLoadGankSuccess(gank.getMeizhiList());
-                        }
-                    }
-
-                    @Override
-                    public void onError(@NonNull Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
-    }
 
 }

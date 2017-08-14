@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 
 import com.chrissen.reading.R;
 import com.chrissen.reading.rss.adapter.RssAdapter;
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * Created by Administrator on 2017/8/9.
@@ -57,4 +58,15 @@ public class RssFragment extends Fragment{
     }
 
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onPageStart("RssFragment");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPageEnd("RssFragment");
+    }
 }

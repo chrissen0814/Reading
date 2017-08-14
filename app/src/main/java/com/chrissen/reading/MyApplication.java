@@ -3,6 +3,8 @@ package com.chrissen.reading;
 import android.app.Application;
 import android.content.Context;
 
+import com.umeng.analytics.MobclickAgent;
+
 import org.litepal.LitePal;
 
 /**
@@ -17,6 +19,7 @@ public class MyApplication extends Application {
     public void onCreate() {
         LitePal.initialize(this);
         context = getApplicationContext();
+        MobclickAgent.openActivityDurationTrack(false);
     }
 
 

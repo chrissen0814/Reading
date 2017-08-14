@@ -18,6 +18,7 @@ import com.chrissen.reading.rss.presenter.StreamPresenterImpl;
 import com.chrissen.reading.util.CustomRecyclerView;
 import com.chrissen.reading.util.fragmentHelper.BackHandlerHelper;
 import com.chrissen.reading.util.fragmentHelper.FragmentBackHandler;
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * Created by Administrator on 2017/8/11.
@@ -71,10 +72,24 @@ public class StreamFragment extends Fragment implements StreamView , FragmentBac
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onPageStart("StreamFragment");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPageEnd("StreamFragment");
+    }
+
+    @Override
     public boolean onBackPressed() {
         BottomNavigationView bnv = (BottomNavigationView) getActivity().findViewById(R.id.main_bnv);
         bnv.setVisibility(View.VISIBLE);
         return BackHandlerHelper.handleBackPress(this);
     }
+
+
 
 }

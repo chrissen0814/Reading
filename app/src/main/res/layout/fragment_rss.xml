@@ -15,7 +15,7 @@
             android:textSize="20sp"
             android:gravity="center_vertical"
             android:paddingLeft="16dp"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:text="@string/fragment_rss_title"/>
 
         <ImageButton
@@ -23,6 +23,7 @@
             android:layout_width="56dp"
             android:layout_height="match_parent"
             android:clickable="true"
+            android:tint="@android:color/black"
             android:background="@android:color/transparent"
             android:layout_alignParentRight="true"
             android:src="@drawable/icon_search"/>

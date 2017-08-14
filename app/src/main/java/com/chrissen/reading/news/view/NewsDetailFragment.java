@@ -24,6 +24,7 @@ import com.chrissen.reading.news.bean.News;
 import com.chrissen.reading.util.ScreenUtil;
 import com.chrissen.reading.util.fragmentHelper.BackHandlerHelper;
 import com.chrissen.reading.util.fragmentHelper.FragmentBackHandler;
+import com.umeng.analytics.MobclickAgent;
 import com.zzhoujay.richtext.ImageHolder;
 import com.zzhoujay.richtext.RichText;
 import com.zzhoujay.richtext.callback.OnImageClickListener;
@@ -137,4 +138,15 @@ public class NewsDetailFragment extends Fragment implements FragmentBackHandler 
         return BackHandlerHelper.handleBackPress(this);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onPageStart("NewsDetailFragment");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPageEnd("NewsDetailFragment");
+    }
 }

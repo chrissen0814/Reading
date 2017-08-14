@@ -6,7 +6,6 @@ import com.chrissen.reading.one.bean.Essay;
 import com.chrissen.reading.one.bean.IdList;
 import com.chrissen.reading.one.bean.OneList;
 import com.chrissen.reading.one.bean.ReadingList;
-import com.chrissen.reading.picture.bean.Gank;
 import com.chrissen.reading.picture.bean.Unsplash;
 import com.chrissen.reading.rss.bean.Rsses;
 import com.chrissen.reading.rss.bean.Stream;
@@ -56,8 +55,5 @@ public interface ApiInterface {
 
     @GET("channel/reading/more/0")
     Observable<ReadingList> getReadingList(@Query("channel") String channel,@Query("version")String version , @Query("uuid")String uuid ,@Query("platform")String platform);
-
-    @GET("福利/{counts}/{page}")
-    Observable<Gank> getGankMeiZhi(@Path("counts") int counts , @Path("page") int page);
 
 }

@@ -2,11 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.chrissen.reading">
 
+    <uses-sdk android:minSdkVersion="16"></uses-sdk>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.SET_WALLPAPER"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -22,6 +24,8 @@
             </intent-filter>
 
         </activity>
+        <meta-data android:value="599133be1061d23fd3000a4c" android:name="UMENG_APPKEY"/>
+        <meta-data android:value="Coolapk" android:name="UMENG_CHANNEL"/>
     </application>
 
 </manifest>

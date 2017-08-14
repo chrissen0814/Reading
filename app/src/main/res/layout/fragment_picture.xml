@@ -5,20 +5,13 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/picture_tool_ll"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/picture_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
-        android:orientation="horizontal"
-        android:background="@color/colorPrimary">
-
-        <Spinner
-            android:id="@+id/picture_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </Spinner>
-
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:title="@string/fragment_unsplash_toolbar">
+    </android.support.v7.widget.Toolbar>
 
     <com.chrissen.reading.util.CustomRecyclerView
         android:id="@+id/picture_rv"
@@ -26,17 +19,7 @@
         android:layout_height="match_parent"
         android:paddingBottom="@dimen/recycler_view_padding"
         android:clipToPadding="false"
-        android:layout_below="@id/picture_tool_ll"/>
-
-    <com.chrissen.reading.util.CustomRecyclerView
-        android:id="@+id/picture_ganl_rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="@dimen/recycler_view_padding"
-        android:clipToPadding="false"
-        android:visibility="invisible"
-        android:layout_below="@id/picture_tool_ll">
-    </com.chrissen.reading.util.CustomRecyclerView>
+        android:layout_below="@id/picture_toolbar"/>
 
     <ProgressBar
         android:id="@+id/picture_empty_view"

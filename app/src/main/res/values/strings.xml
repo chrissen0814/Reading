@@ -6,7 +6,7 @@
     <string name="bnv_rss">Rss</string>
     <string name="bnv_one">一个</string>
 
-    <string name="fragment_unsplash_toolbar">Unsplash</string>
+    <string name="fragment_unsplash_toolbar">BeautySplash</string>
     <string name="fragment_news_toolbar">新闻</string>
     <string name="fragment_rss_title">订阅</string>
 
@@ -67,16 +67,5 @@
     </string-array>
 
     <string name="default_screen_default">picture</string>
-
-    <string-array name="picture_category">
-        <item>Unsplash</item>
-        <item>Gank妹子</item>
-    </string-array>
-
-    <string-array name="picture_category_value">
-        <item>unsplash</item>
-        <item>meizhi</item>
-    </string-array>
-    <string name="default_picture_category">unsplash</string>
     
 </resources>

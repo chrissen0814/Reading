@@ -19,6 +19,7 @@ import com.chrissen.reading.one.bean.OneList;
 import com.chrissen.reading.one.bean.ReadingList;
 import com.chrissen.reading.one.presenter.OneListPreImpl;
 import com.chrissen.reading.one.presenter.OneListPresenter;
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * Created by Administrator on 2017/8/12.
@@ -78,5 +79,15 @@ public class OneListListFragment extends Fragment implements OneListView {
         onelistRv.setAdapter(adapter);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onPageStart("OneListFragment");
+    }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPageEnd("OneListFragment");
+    }
 }
