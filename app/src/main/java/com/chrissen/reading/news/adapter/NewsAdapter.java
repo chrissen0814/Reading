@@ -42,10 +42,10 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == NEWS_WITH_IMAGE) {
-            View view = LayoutInflater.from(fragment.getActivity()).inflate(R.layout.item_news,parent,false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_news,parent,false);
             return new ArticleViewHolder(view);
         }else {
-            View view = LayoutInflater.from(fragment.getActivity()).inflate(R.layout.item_news_no_image,parent,false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_news_no_image,parent,false);
             return new ArticleNoImageViewHolder(view);
         }
     }
@@ -54,7 +54,6 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
         final News.Result.Info info = infoList.get(position);
         if(holder instanceof ArticleViewHolder){
-
             Glide.with(fragment.getActivity()).load(info.getPic())
                     .into(((ArticleViewHolder)holder).imageIv);
             ((ArticleViewHolder)holder).titleTv.setText(info.getTitle());

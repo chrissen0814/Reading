@@ -8,13 +8,11 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.chrissen.reading.news.view.NewsFragment;
+import com.chrissen.reading.news.view.NewsPagerFragment;
 import com.chrissen.reading.one.view.OneListListFragment;
 import com.chrissen.reading.picture.view.PictureFragment;
 import com.chrissen.reading.rss.view.RssFragment;
@@ -27,21 +25,21 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_PERMISSION = 1;
 
     private BottomNavigationView mainBnv;
-    private DrawerLayout drawerLayout;
-    private LinearLayout menuDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initLayout();
+        if (savedInstanceState == null) {
+            initLayout();
+        }
         checkPermissions();
     }
 
     private void checkPermissions() {
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED){
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
+                != PackageManager.PERMISSION_GRANTED){
             if(ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.READ_PHONE_STATE)){
-
             }else {
                 ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_PHONE_STATE},REQUEST_PERMISSION);
             }
@@ -50,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void initLayout() {
         mainBnv = (BottomNavigationView) findViewById(R.id.main_bnv);
-        drawerLayout = (DrawerLayout) findViewById(R.id.activity_main);
-        menuDrawer = (LinearLayout) findViewById(R.id.main_drawer_layout_ll);
         String types = PreferenceManager.getDefaultSharedPreferences(this).getString("default_screen","picture");
         switch (types){
             case "picture":
@@ -108,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startNewsFragment(){
-        NewsFragment af = new NewsFragment();
+        NewsPagerFragment af = new NewsPagerFragment();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.main_container_fl,af)
                 .commit();

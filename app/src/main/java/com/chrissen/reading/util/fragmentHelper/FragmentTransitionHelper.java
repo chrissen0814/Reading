@@ -24,11 +24,24 @@ public class FragmentTransitionHelper {
             targetFragment.setSharedElementEnterTransition(TransitionInflater.from(context).inflateTransition(R.transition.default_transition));
             targetFragment.setEnterTransition(new Fade());
         }
-        currentFragment.getFragmentManager().beginTransaction()
+        if(!targetFragment.isAdded()){
+            currentFragment.getFragmentManager().beginTransaction()
+                    .hide(currentFragment)
+                    .add(R.id.main_container_fl,targetFragment)
+                    .addToBackStack(null)
+                    .commit();
+        }else {
+            currentFragment.getFragmentManager().beginTransaction()
+                    .hide(currentFragment)
+                    .show(targetFragment)
+                    .addToBackStack(null)
+                    .commit();
+        }
+        /*currentFragment.getFragmentManager().beginTransaction()
                 .replace(R.id.main_container_fl,targetFragment)
                 .addSharedElement(transitionView,transitionName)
                 .addToBackStack(null)
-                .commit();
+                .commit();*/
         currentFragment.getActivity().findViewById(R.id.main_bnv).setVisibility(View.GONE);
     }
 

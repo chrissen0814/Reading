@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +43,6 @@ public class WeiBoFragment extends Fragment implements WeiboView {
     private WeiBoHomelineAdapter adapter;
     private List<Status> statuses = new ArrayList<>();
 
-    private Toolbar weiboHomelineToolbar;
     private CustomRecyclerView homelineRv;
     private ProgressBar emptyView;
 
@@ -64,7 +62,6 @@ public class WeiBoFragment extends Fragment implements WeiboView {
     }
 
     private void initLayout(View view) {
-        weiboHomelineToolbar = (Toolbar) view.findViewById(R.id.weibo_main_toolbar);
         emptyView = (ProgressBar) view.findViewById(R.id.weibo_main_empty_view);
         homelineRv = (CustomRecyclerView) view.findViewById(R.id.weibo_main_rv);
         homelineLlm = new LinearLayoutManager(getActivity());

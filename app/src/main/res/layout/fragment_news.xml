@@ -1,38 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <RelativeLayout
-        android:id="@+id/article_menu_rl"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary">
-
-        <Spinner
-            android:id="@+id/news_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="12dp"/>
-
-    </RelativeLayout>
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <com.chrissen.reading.util.CustomRecyclerView
-        android:id="@+id/article_rv"
+        android:id="@+id/news_content_crv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="@dimen/recycler_view_padding"
-        android:clipToPadding="false"
-        android:layout_below="@id/article_menu_rl">
+        android:paddingBottom="@dimen/card_view_layout_margin"
+        android:clipToPadding="false">
     </com.chrissen.reading.util.CustomRecyclerView>
 
     <ProgressBar
-        android:id="@+id/article_empty_view"
+        android:id="@+id/news_empty_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"/>
-
 
 </RelativeLayout>

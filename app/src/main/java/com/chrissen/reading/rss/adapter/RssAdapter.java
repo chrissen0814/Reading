@@ -57,10 +57,21 @@ public class RssAdapter extends RecyclerView.Adapter<RssAdapter.RssViewHolder> {
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fragment.getFragmentManager().beginTransaction()
-                        .replace(R.id.main_container_fl,StreamFragment.newInstance(feed.getTitle(),feed.getFeedId()))
-                        .addToBackStack(null)
-                        .commit();
+                StreamFragment streamFragment = StreamFragment.newInstance(feed.getTitle(),feed.getFeedId());
+                if (!streamFragment.isAdded()) {
+                    fragment.getFragmentManager().beginTransaction()
+                            .hide(fragment)
+                            .add(R.id.main_container_fl,streamFragment)
+                            .addToBackStack(null)
+                            .commit();
+                }else {
+                    fragment.getFragmentManager().beginTransaction()
+                            .hide(fragment)
+                            .show(streamFragment)
+                            .addToBackStack(null)
+                            .commit();
+                }
+
             }
         });
         holder.view.setOnLongClickListener(new View.OnLongClickListener() {
