@@ -1,7 +1,6 @@
 package com.chrissen.reading.news.adapter;
 
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.chrissen.reading.MyApplication;
 import com.chrissen.reading.R;
 import com.chrissen.reading.news.bean.News;
 import com.chrissen.reading.news.view.NewsDetailFragment;
@@ -64,10 +62,8 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             ((ArticleViewHolder)holder).layout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String transitionName = info.getTitle() + position;
-                    ViewCompat.setTransitionName(((ArticleViewHolder)holder).imageIv,transitionName);
-                    NewsDetailFragment adf = NewsDetailFragment.newInstance(info,transitionName);
-                    FragmentTransitionHelper.startFargment(MyApplication.getContext(),fragment,adf,((ArticleViewHolder)holder).imageIv,transitionName);
+                    NewsDetailFragment adf = NewsDetailFragment.newInstance(info);
+                    FragmentTransitionHelper.startFargment(fragment,adf);
                 }
             });
         }else{
@@ -79,10 +75,8 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             ((ArticleNoImageViewHolder)holder).layout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String transitionName = info.getTitle() + position;
-                    ViewCompat.setTransitionName(((ArticleNoImageViewHolder)holder).titleTv,transitionName);
-                    NewsDetailFragment adf = NewsDetailFragment.newInstance(info,transitionName);
-                    FragmentTransitionHelper.startFargment(MyApplication.getContext(),fragment,adf,((ArticleNoImageViewHolder)holder).titleTv,transitionName);
+                    NewsDetailFragment adf = NewsDetailFragment.newInstance(info);
+                    FragmentTransitionHelper.startFargment(fragment,adf);
                 }
             });
         }

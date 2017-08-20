@@ -35,20 +35,18 @@
     </string-array>
 
     <string-array name="news_category_values">
-        <item>top</item>
-        <item>news</item>
-        <item>finance</item>
-        <item>sport</item>
-        <item>entertainment</item>
-        <item>military</item>
-        <item>technology</item>
-        <item>nba</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
     </string-array>
 
-    <string name="default_news_category">top</string>
-    
-    <string name="url_scheme">urlscheme</string>
-    <string name="url_host">chrissen_main_activity</string>
+    <string name="default_news_category">0</string>
+
 
     <string-array name="default_screen">
         <item>图片</item>

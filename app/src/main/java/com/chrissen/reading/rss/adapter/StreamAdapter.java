@@ -11,6 +11,7 @@ import com.chrissen.reading.R;
 import com.chrissen.reading.rss.bean.Entry;
 import com.chrissen.reading.rss.view.ArticleFragment;
 import com.chrissen.reading.util.TimerHelper;
+import com.chrissen.reading.util.fragmentHelper.FragmentTransitionHelper;
 
 import org.litepal.crud.DataSupport;
 
@@ -46,11 +47,8 @@ public class StreamAdapter extends RecyclerView.Adapter<StreamAdapter.StreamView
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fragment.getFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.main_container_fl, ArticleFragment.newInstance(entry.getFeedId()))
-                        .addToBackStack(null)
-                        .commit();
+                ArticleFragment af = ArticleFragment.newInstance(entry.getFeedId());
+                FragmentTransitionHelper.startFargment(fragment,af);
             }
         });
     }

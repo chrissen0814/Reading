@@ -1,6 +1,7 @@
 package com.chrissen.reading;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -8,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -16,6 +18,7 @@ import com.chrissen.reading.news.view.NewsPagerFragment;
 import com.chrissen.reading.one.view.OneListListFragment;
 import com.chrissen.reading.picture.view.PictureFragment;
 import com.chrissen.reading.rss.view.RssFragment;
+import com.chrissen.reading.util.PreferenceHelper;
 import com.chrissen.reading.util.fragmentHelper.BackHandlerHelper;
 import com.chrissen.reading.weibo.view.WeiBoFragment;
 import com.umeng.analytics.MobclickAgent;
@@ -33,7 +36,22 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             initLayout();
         }
-        checkPermissions();
+        showPermissionsDialog();
+    }
+
+    private void showPermissionsDialog() {
+        boolean isFirst = PreferenceHelper.getBoolean(PreferenceHelper.IS_FIRST,true);
+        if (isFirst) {
+            new AlertDialog.Builder(this)
+                    .setTitle("权限说明")
+                    .setMessage("获取通话权限的目的是用于统计数据信息，获取软件的崩溃日志信息等")
+                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            checkPermissions();
+                        }
+                    }).create().show();
+        }
     }
 
     private void checkPermissions() {
@@ -149,6 +167,7 @@ public class MainActivity extends AppCompatActivity {
         switch (requestCode){
             case REQUEST_PERMISSION:
                 if(grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    PreferenceHelper.putBoolean(PreferenceHelper.IS_FIRST,false);
                 }else {
                     Toast.makeText(this, "Sad!!!", Toast.LENGTH_SHORT).show();
                 }

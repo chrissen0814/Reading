@@ -1,6 +1,7 @@
 package com.chrissen.reading.news.view;
 
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.chrissen.reading.MyApplication;
 import com.chrissen.reading.R;
 import com.chrissen.reading.news.adapter.NewsPagerAdapter;
 import com.umeng.analytics.MobclickAgent;
@@ -52,6 +54,9 @@ public class NewsPagerFragment extends Fragment{
         newsPagerAdapter = new NewsPagerAdapter(getFragmentManager(),titleList,fragmentList);
         viewPager.setAdapter(newsPagerAdapter);
         tabLayout.setupWithViewPager(viewPager,true);
+        String defaultNews = PreferenceManager.getDefaultSharedPreferences(MyApplication.getContext()).getString("default_news","0");
+        tabLayout.getTabAt(Integer.valueOf(defaultNews)).select();
+        viewPager.setCurrentItem(Integer.valueOf(defaultNews));
     }
 
 

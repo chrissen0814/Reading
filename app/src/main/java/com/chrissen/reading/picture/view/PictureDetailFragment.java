@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
@@ -16,7 +15,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
-import android.transition.TransitionInflater;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,10 +53,8 @@ public class PictureDetailFragment extends Fragment implements View.OnClickListe
     private static final String UTM = "?utm_source=" + UTM_SOURCE + "&utm_medium=referral&utm_campaign=api-credit";
 
     private static final String UNSPLASH = "unsplash";
-    private static final String TRANSITION_NAME = "transition_name";
     private static final int REQUEST_CODE = 1;
     private Unsplash unsplash;
-    private String transitionName;
     private LinearLayout layout;
     private CardView imageCv;
     private ImageView fullIv;
@@ -67,10 +63,9 @@ public class PictureDetailFragment extends Fragment implements View.OnClickListe
     private LinearLayout setWallpaperLl , saveLl , shareLl , linkLl , authorLl;
 
 
-    public static PictureDetailFragment newInstance(Unsplash unsplash, String transitionName){
+    public static PictureDetailFragment newInstance(Unsplash unsplash){
         Bundle bundle = new Bundle();
         bundle.putSerializable(UNSPLASH,unsplash);
-        bundle.putString(TRANSITION_NAME,transitionName);
         PictureDetailFragment fragment = new PictureDetailFragment();
         fragment.setArguments(bundle);
         return fragment;
@@ -80,12 +75,7 @@ public class PictureDetailFragment extends Fragment implements View.OnClickListe
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            setSharedElementEnterTransition(TransitionInflater.from(getContext())
-                .inflateTransition(android.R.transition.move));
-        }
         unsplash = (Unsplash) getArguments().getSerializable(UNSPLASH);
-        transitionName = getArguments().getString(TRANSITION_NAME);
     }
 
     @Nullable
@@ -107,9 +97,6 @@ public class PictureDetailFragment extends Fragment implements View.OnClickListe
         authorLl.setOnClickListener(this);
         imageCv = (CardView) view.findViewById(R.id.picture_detail_image_cv);
         progressBar = (ProgressBar) view.findViewById(R.id.picture_detail_pb);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            imageCv.setTransitionName(transitionName);
-        }
         return view;
     }
 

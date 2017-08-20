@@ -17,7 +17,7 @@
         android:id="@+id/picture_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="@dimen/recycler_view_padding"
+        android:paddingBottom="@dimen/card_view_layout_top_bottom_margin"
         android:clipToPadding="false"
         android:layout_below="@id/picture_toolbar"/>
 

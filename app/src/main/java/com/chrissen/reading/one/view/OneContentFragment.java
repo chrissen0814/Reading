@@ -2,7 +2,6 @@ package com.chrissen.reading.one.view;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
@@ -31,11 +30,9 @@ import com.zzhoujay.richtext.RichText;
 public class OneContentFragment extends Fragment implements OneContentView {
     private static final String IMAGE_URL = "image";
     private static final String ITEM_ID = "item_id";
-    private static final String TRANSITION = "transition";
 
     private String imageUrl;
     private String itemId;
-    private String transitionName;
 
     private OneContentPresenter presenter;
 
@@ -45,11 +42,10 @@ public class OneContentFragment extends Fragment implements OneContentView {
     private Button linkBt;
     private AppBarLayout appBarLayout;
 
-    public static OneContentFragment newInstance(String imageUrl , String itemId , String transitionName){
+    public static OneContentFragment newInstance(String imageUrl , String itemId){
         Bundle bundle = new Bundle();
         bundle.putString(IMAGE_URL,imageUrl);
         bundle.putString(ITEM_ID,itemId);
-        bundle.putString(TRANSITION,transitionName);
         OneContentFragment fragment = new OneContentFragment();
         fragment.setArguments(bundle);
         return fragment;
@@ -61,7 +57,6 @@ public class OneContentFragment extends Fragment implements OneContentView {
         presenter = new OneContentPreImpl(this);
         imageUrl = getArguments().getString(IMAGE_URL);
         itemId = getArguments().getString(ITEM_ID);
-        transitionName = getArguments().getString(TRANSITION);
     }
 
     @Nullable
@@ -69,9 +64,6 @@ public class OneContentFragment extends Fragment implements OneContentView {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_one_content,container,false);
         headerIv = (ImageView) view.findViewById(R.id.one_content_image_iv);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            headerIv.setTransitionName(transitionName);
-        }
         titleTv = (TextView) view.findViewById(R.id.one_content_title_tv);
         contentTv = (TextView) view.findViewById(R.id.one_content_content_tv);
         linkBt = (Button) view.findViewById(R.id.one_content_link_bt);

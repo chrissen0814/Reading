@@ -7,7 +7,7 @@
         android:id="@+id/news_content_crv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="@dimen/card_view_layout_margin"
+        android:paddingBottom="@dimen/card_view_layout_top_bottom_margin"
         android:clipToPadding="false">
     </com.chrissen.reading.util.CustomRecyclerView>
 

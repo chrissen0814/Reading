@@ -1,7 +1,6 @@
 package com.chrissen.reading.picture.adapter;
 
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.chrissen.reading.MyApplication;
 import com.chrissen.reading.R;
 import com.chrissen.reading.picture.bean.Unsplash;
 import com.chrissen.reading.picture.view.PictureDetailFragment;
@@ -52,11 +50,8 @@ public class UnsplashAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         ((ContentViewHolder) holder).layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String imageUrl = unsplash.getUrls().getRegular();
-                String transitionName = imageUrl + position;
-                ViewCompat.setTransitionName(((ContentViewHolder) holder).pictureIv,transitionName);
-                PictureDetailFragment pdf = PictureDetailFragment.newInstance(unsplash,transitionName);
-                FragmentTransitionHelper.startFargment(MyApplication.getContext(),mFragment,pdf,((ContentViewHolder) holder).pictureIv,transitionName);
+                PictureDetailFragment pdf = PictureDetailFragment.newInstance(unsplash);
+                FragmentTransitionHelper.startFargment(mFragment,pdf);
             }
         });
 

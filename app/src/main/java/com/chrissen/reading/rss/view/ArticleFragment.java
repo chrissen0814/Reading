@@ -3,14 +3,18 @@ package com.chrissen.reading.rss.view;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.chrissen.reading.MyApplication;
 import com.chrissen.reading.R;
 import com.chrissen.reading.rss.bean.Entry;
 import com.umeng.analytics.MobclickAgent;
@@ -75,7 +79,29 @@ public class ArticleFragment extends Fragment {
                 startActivity(linkIntent);
             }
         });
+
+        boolean doubleClick = PreferenceManager.getDefaultSharedPreferences(MyApplication.getContext()).getBoolean("double_to_close",false);
+        if (doubleClick) {
+            doubleToClose();
+        }
     }
+
+    private void doubleToClose(){
+        final GestureDetector gestureDetector = new GestureDetector(getActivity(),new GestureDetector.SimpleOnGestureListener(){
+            @Override
+            public boolean onDoubleTap(MotionEvent e) {
+                getActivity().onBackPressed();
+                return super.onDoubleTap(e);
+            }
+        });
+        contentTv.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return gestureDetector.onTouchEvent(event);
+            }
+        });
+    }
+
 
     @Override
     public void onResume() {

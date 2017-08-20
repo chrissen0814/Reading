@@ -3,11 +3,14 @@ package com.chrissen.reading.news.view;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -36,10 +39,8 @@ import java.util.List;
 public class NewsDetailFragment extends Fragment implements FragmentBackHandler {
 
     private static final String Info = "info";
-    private static final String TRANSITION_NAME = "transition";
 
     private News.Result.Info info;
-    private String transitionName;
 
     private TextView titleTv;
     private TextView contentTv;
@@ -47,10 +48,9 @@ public class NewsDetailFragment extends Fragment implements FragmentBackHandler 
     private Button linkBt;
     private CollapsingToolbarLayout ctl;
 
-    public static NewsDetailFragment newInstance(News.Result.Info info , String transitionName){
+    public static NewsDetailFragment newInstance(News.Result.Info info){
         Bundle bundle = new Bundle();
         bundle.putSerializable(Info,info);
-        bundle.putString(TRANSITION_NAME,transitionName);
         NewsDetailFragment fragment = new NewsDetailFragment();
         fragment.setArguments(bundle);
         return fragment;
@@ -59,9 +59,7 @@ public class NewsDetailFragment extends Fragment implements FragmentBackHandler 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        RichText.initCacheDir(MyApplication.getContext());
         info = (News.Result.Info) getArguments().getSerializable(Info);
-        transitionName = getArguments().getString(TRANSITION_NAME);
     }
 
     @Nullable
@@ -73,13 +71,6 @@ public class NewsDetailFragment extends Fragment implements FragmentBackHandler 
         contentTv = (TextView) view.findViewById(R.id.article_detail_content_tv);
         contentImageIv = (ImageView) view.findViewById(R.id.news_detail_image_iv);
         linkBt = (Button) view.findViewById(R.id.news_detail_link_bt);
-        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            if(info.getPic().equals("")){
-                titleTv.setTransitionName(transitionName);
-            }else {
-                contentImageIv.setTransitionName(transitionName);
-            }
-        }*/
         initLayout();
         return view;
     }
@@ -122,6 +113,27 @@ public class NewsDetailFragment extends Fragment implements FragmentBackHandler 
                 return true;
             }
         }).into(contentTv);
+
+        boolean doubleClick = PreferenceManager.getDefaultSharedPreferences(MyApplication.getContext()).getBoolean("double_to_close",false);
+        if (doubleClick) {
+            doubleToClose();
+        }
+    }
+
+    private void doubleToClose() {
+        final GestureDetector gestureDetector = new GestureDetector(getActivity(),new GestureDetector.SimpleOnGestureListener(){
+            @Override
+            public boolean onDoubleTap(MotionEvent e) {
+                getActivity().onBackPressed();
+                return super.onDoubleTap(e);
+            }
+        });
+        contentTv.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return gestureDetector.onTouchEvent(event) ;
+            }
+        });
     }
 
     @Override
@@ -142,4 +154,5 @@ public class NewsDetailFragment extends Fragment implements FragmentBackHandler 
         super.onPause();
         MobclickAgent.onPageEnd("NewsDetailFragment");
     }
+
 }

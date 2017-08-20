@@ -18,7 +18,7 @@
         android:id="@+id/weibo_main_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="@dimen/card_view_layout_margin"
+        android:paddingBottom="@dimen/card_view_layout_left_right_margin"
         android:clipToPadding="false"
         android:layout_below="@id/weibo_main_toolbar">
     </com.chrissen.reading.util.CustomRecyclerView>

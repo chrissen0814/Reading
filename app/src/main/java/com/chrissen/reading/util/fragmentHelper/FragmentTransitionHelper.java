@@ -1,10 +1,6 @@
 package com.chrissen.reading.util.fragmentHelper;
 
-import android.content.Context;
-import android.os.Build;
 import android.support.v4.app.Fragment;
-import android.transition.Fade;
-import android.transition.TransitionInflater;
 import android.view.View;
 
 import com.chrissen.reading.R;
@@ -16,33 +12,30 @@ import com.chrissen.reading.R;
 public class FragmentTransitionHelper {
 
 
-    public static void startFargment(Context context , Fragment currentFragment , Fragment targetFragment , View transitionView , String transitionName){
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            currentFragment.setSharedElementReturnTransition(TransitionInflater.from(context).inflateTransition(R.transition.default_transition));
-            currentFragment.setExitTransition(new Fade());
-            targetFragment.setSharedElementEnterTransition(TransitionInflater.from(context).inflateTransition(R.transition.default_transition));
-            targetFragment.setEnterTransition(new Fade());
-        }
+    public static void startFargment( Fragment currentFragment , Fragment targetFragment){
         if(!targetFragment.isAdded()){
             currentFragment.getFragmentManager().beginTransaction()
+                    .setCustomAnimations(R.anim.fragment_slide_right_in,R.anim.fragment_slide_left_out,R.anim.fragment_slide_left_in,R.anim.fragment_slide_right_out)
                     .hide(currentFragment)
                     .add(R.id.main_container_fl,targetFragment)
                     .addToBackStack(null)
                     .commit();
         }else {
             currentFragment.getFragmentManager().beginTransaction()
+                    .setCustomAnimations(R.anim.fragment_slide_right_in,R.anim.fragment_slide_left_out,R.anim.fragment_slide_left_in,R.anim.fragment_slide_right_out)
                     .hide(currentFragment)
                     .show(targetFragment)
                     .addToBackStack(null)
                     .commit();
         }
-        /*currentFragment.getFragmentManager().beginTransaction()
-                .replace(R.id.main_container_fl,targetFragment)
-                .addSharedElement(transitionView,transitionName)
-                .addToBackStack(null)
-                .commit();*/
         currentFragment.getActivity().findViewById(R.id.main_bnv).setVisibility(View.GONE);
+    }
+
+    public static void returnFragment(Fragment currentFragment , Fragment returnFragment){
+        currentFragment.getFragmentManager().beginTransaction()
+                .hide(currentFragment)
+                .show(returnFragment)
+                .commit();
     }
 
 }

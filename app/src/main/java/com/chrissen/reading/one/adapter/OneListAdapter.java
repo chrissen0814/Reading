@@ -49,10 +49,8 @@ public class OneListAdapter extends RecyclerView.Adapter<OneListAdapter.OneListV
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String transitionName = reading.getItemId();
-                ViewCompat.setTransitionName(holder.imageIv,transitionName);
-                OneContentFragment ocf = OneContentFragment.newInstance(reading.getImageUrl(),reading.getItemId(),transitionName);
-                FragmentTransitionHelper.startFargment(fragment.getContext(),fragment,ocf,holder.imageIv,transitionName);
+                OneContentFragment ocf = OneContentFragment.newInstance(reading.getImageUrl(),reading.getItemId());
+                FragmentTransitionHelper.startFargment(fragment,ocf);
             }
         });
     }

@@ -51,6 +51,7 @@
             android:paddingLeft="16dp"
             android:paddingBottom="24dp"
             android:lineSpacingExtra="6dp"
+            android:clickable="true"
             android:textSize="20sp"/>
 
     </LinearLayout>
