@@ -9,8 +9,7 @@
         android:id="@+id/weibo_main_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        app:title="@string/bnv_weibo">
+        android:background="@color/colorPrimary">
     </android.support.v7.widget.Toolbar>
 
 

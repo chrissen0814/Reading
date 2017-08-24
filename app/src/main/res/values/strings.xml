@@ -2,7 +2,6 @@
     <string name="app_name">零下阅读</string>
     <string name="bnv_picture">图片</string>
     <string name="bnv_news">新闻</string>
-    <string name="bnv_weibo">微博</string>
     <string name="bnv_rss">Rss</string>
     <string name="bnv_one">一个</string>
 
@@ -51,7 +50,6 @@
     <string-array name="default_screen">
         <item>图片</item>
         <item>新闻</item>
-        <item>微博</item>
         <item>订阅</item>
         <item>一个</item>
     </string-array>
@@ -59,7 +57,6 @@
     <string-array name="default_screen_values">
         <item>picture</item>
         <item>news</item>
-        <item>weibo</item>
         <item>rss</item>
         <item>one</item>
     </string-array>

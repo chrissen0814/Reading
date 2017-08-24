@@ -76,10 +76,6 @@ public class MainActivity extends AppCompatActivity {
                 mainBnv.setSelectedItemId(R.id.menu_bnv_article);
                 startNewsFragment();
                 break;
-            case "weibo":
-                mainBnv.setSelectedItemId(R.id.menu_bnv_weibo);
-                startWeiboFragment();
-                break;
             case "rss":
                 mainBnv.setSelectedItemId(R.id.menu_bnv_rss);
                 startRssFragment();
@@ -98,9 +94,6 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.menu_bnv_article:
                         startNewsFragment();
-                        break;
-                    case R.id.menu_bnv_weibo:
-                        startWeiboFragment();
                         break;
                     case R.id.menu_bnv_rss:
                         startRssFragment();

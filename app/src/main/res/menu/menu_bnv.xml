@@ -17,13 +17,6 @@
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/menu_bnv_weibo"
-        android:title="@string/bnv_weibo"
-        android:icon="@drawable/bnv_weibo"
-        android:enabled="true"
-        app:showAsAction="ifRoom"/>
-
-    <item
         android:id="@+id/menu_bnv_rss"
         android:title="@string/bnv_rss"
         android:icon="@drawable/bnv_rss"
